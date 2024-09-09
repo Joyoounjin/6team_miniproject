@@ -255,6 +255,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede69ad22e8d19f4eb9d7a573d44e490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Name: YJ
+  difficulty: 1
   timeTxt: {fileID: 888635042}
   firstCard: {fileID: 0}
   secondCard: {fileID: 0}
