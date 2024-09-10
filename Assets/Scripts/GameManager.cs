@@ -80,6 +80,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            Time.timeScale = 1.0f;
             Destroy(this.gameObject);
         }
     }
