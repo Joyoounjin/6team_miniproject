@@ -24,9 +24,7 @@ public class TimeSlideBar : MonoBehaviour
         if(currentTime < totalTime/3 && !istime)
         {
             AudioManager.Instance.audioSource.Stop();
-            AudioManager.Instance.audioSource.clip = AudioManager.Instance.timeclip;
             AudioManager.Instance.audioSource.Play();
-            Debug.Log("asd");  // 재생 중인지 확인
             istime = true;
         }
 
@@ -34,9 +32,10 @@ public class TimeSlideBar : MonoBehaviour
         {
             Time.timeScale = 0;
             AudioManager.Instance.audioSource.Stop();
-            GameManager.Instance.audioSource.PlayOneShot(GameManager.Instance.failclip);
-            isover=true;
+            isover = true;
         }
+
+
     }
 
 
