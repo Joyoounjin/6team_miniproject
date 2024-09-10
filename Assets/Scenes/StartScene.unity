@@ -420,6 +420,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 0}
   clip: {fileID: 8300000, guid: dd52fefc2670f85498b39edacfa57efa, type: 3}
+  mainclip: {fileID: 8300000, guid: f5a9a7d022a473248b57834ae47e7995, type: 3}
+  timeclip: {fileID: 8300000, guid: c72687c9125a54a469ae2533c180b9ea, type: 3}
 --- !u!4 &488827598
 Transform:
   m_ObjectHideFlags: 0
@@ -446,7 +448,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

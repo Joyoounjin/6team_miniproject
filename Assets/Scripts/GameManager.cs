@@ -20,15 +20,22 @@ public class GameManager : MonoBehaviour
     public int cardCount = 0;
     public GameObject endTxt;
 
-    public AudioClip clip;
+    public AudioClip matchedclip;
+    public AudioClip unmatchedclip;
+    public AudioClip failclip;
+    public AudioClip successclip;
+    public AudioClip timeclip;
+
+
     public AudioSource audioSource;
+    public AudioManager audioManager;
 
 
     public void isMatched()
     {
         if (firstCard.index == secondCard.index)
         {
-            audioSource.PlayOneShot(clip);
+            audioSource.PlayOneShot(matchedclip);
 
             firstCard.DestroyCard();
             secondCard.DestroyCard();
@@ -36,12 +43,14 @@ public class GameManager : MonoBehaviour
 
             if (cardCount == 0)
             {
+                audioSource.PlayOneShot(successclip);
                 endTxt.SetActive(true);
                 Time.timeScale = 0.0f;
             }
         }
         else
         {
+            audioSource.PlayOneShot(unmatchedclip);
             firstCard.CloseCard();
             secondCard.CloseCard();
         }
@@ -79,17 +88,20 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         audioSource = GetComponent<AudioSource>();
-    }
-
-    private void Update()
-    {
-        time += Time.deltaTime;
-        timeTxt.text = time.ToString("N2");
-        if (time >= 30.0f)
-        {
-            endTxt.SetActive(true);
-            Time.timeScale = 0.0f;
-        }
+        AudioManager.Instance.audioSource.clip = AudioManager.Instance.mainclip;
+        AudioManager.Instance.audioSource.Play();
 
     }
+
+    //private void Update()
+    //{
+    //    time += Time.deltaTime;
+    //    timeTxt.text = time.ToString("N2");
+    //    if (time >= 30.0f)
+    //    {
+    //        endTxt.SetActive(true);
+    //        Time.timeScale = 0.0f;
+    //    }
+
+    //}
 }

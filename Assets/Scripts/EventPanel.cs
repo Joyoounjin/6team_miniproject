@@ -22,7 +22,7 @@ public class EventPanel : MonoBehaviour
 
     private int currentIndex = 0;        // 현재 패널 인덱스
     private float panelWidth = 760f;     // 패널 하나의 너비
-    private float panelHeight = 300f;    // 패널 하나의 높이
+    private float panelHeight = 411.6f;    // 패널 하나의 높이
     private float targetPosition = 0f;   // 목표 위치
 
     public float autoScrollDelay = 1f;   // 자동 스크롤 지연 시간 (1초)

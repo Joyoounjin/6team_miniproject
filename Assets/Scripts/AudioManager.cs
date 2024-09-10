@@ -8,6 +8,8 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource audioSource;
     public AudioClip clip;
+    public AudioClip mainclip;
+    public AudioClip timeclip;
 
     private void Awake()
     {

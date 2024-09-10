@@ -546,7 +546,7 @@ GameObject:
   - component: {fileID: 8075619156200236935}
   - component: {fileID: 6039689317986210318}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: EventScrollView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

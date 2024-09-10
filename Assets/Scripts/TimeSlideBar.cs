@@ -8,6 +8,8 @@ public class TimeSlideBar : MonoBehaviour
     public Image gauge;
     public float totalTime; // 10초로 설정
     private float currentTime;
+    bool istime = false;
+    bool isover= false;
 
     void Start()
     {
@@ -19,11 +21,21 @@ public class TimeSlideBar : MonoBehaviour
         currentTime = Mathf.Max(0, currentTime - Time.deltaTime);
 
         gauge.rectTransform.localScale = new Vector3(currentTime / totalTime, 1, 1);
+        if(currentTime < totalTime/3 && !istime)
+        {
+            AudioManager.Instance.audioSource.Stop();
+            AudioManager.Instance.audioSource.clip = AudioManager.Instance.timeclip;
+            AudioManager.Instance.audioSource.Play();
+            Debug.Log("asd");  // 재생 중인지 확인
+            istime = true;
+        }
 
-        if (currentTime == 0)
+        if (currentTime == 0 && !isover)
         {
             Time.timeScale = 0;
-            Debug.Log($"{currentTime}");
+            AudioManager.Instance.audioSource.Stop();
+            GameManager.Instance.audioSource.PlayOneShot(GameManager.Instance.failclip);
+            isover=true;
         }
     }
 
