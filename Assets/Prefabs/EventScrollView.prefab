@@ -125,20 +125,18 @@ MonoBehaviour:
   rightArrow: {fileID: 3352453556528355756}
   panelPrefab: {fileID: 623960458181202564, guid: fe3b1839c30577b42a41fe310cc2493d, type: 3}
   content: {fileID: 2361904492933646199}
-  totalPanels: 6
+  totalPanels: 5
   category1Images:
-  - {fileID: 21300000, guid: ad5ed99fedb08b745836a4ee5beb948d, type: 3}
-  - {fileID: 21300000, guid: b5d2db1b6f432fc48bbf1e5e3db07d99, type: 3}
-  - {fileID: 21300000, guid: 6a57f82a154472843ac9d94ee5e73577, type: 3}
-  - {fileID: 21300000, guid: 64c889f9c3eced34eb80a57fe171879b, type: 3}
-  - {fileID: 21300000, guid: b81031510641f7e42a65853260e70614, type: 3}
-  - {fileID: 21300000, guid: ba68ec413cd6f6d42adc8a97de24004a, type: 3}
+  - {fileID: 21300000, guid: fb164d3ce248f7744991158e87eb7381, type: 3}
+  - {fileID: 21300000, guid: b52ba46e897d4d14893404e7a3e45f2d, type: 3}
+  - {fileID: 21300000, guid: 0acec652e4f1b544fa62255726220b4a, type: 3}
+  - {fileID: 21300000, guid: 8e51dcfa8831103458e261948515e289, type: 3}
+  - {fileID: 21300000, guid: bb447c63bbb3b5c4ab630e3543e6c579, type: 3}
   category2Images: []
   category3Images: []
   category4Images: []
   categoryNumber: 1
   autoScrollDelay: 1
-  scrollSpeed: 0.2
 --- !u!1 &351163898409989223
 GameObject:
   m_ObjectHideFlags: 0
