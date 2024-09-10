@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/GalleryScene_TH.unity
     guid: f668a60e8eb545347b648d37007d79df
   - enabled: 1
+    path: Assets/Scenes/GalleryScene_B.unity
+    guid: 52ecf4388af530a4c90edff544002dd0
+  - enabled: 1
     path: Assets/Scenes/GalleryScene_GD.unity
     guid: 8e351e6c65199c44d9c14024d3f697da
   m_configObjects: {}
