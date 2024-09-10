@@ -102,6 +102,13 @@ public class GameManager : MonoBehaviour
                 Time.timeScale = 0.0f;
             }
         }
+        else
+        {
+            if (FindObjectOfType<Canvas>().transform.GetChild(0).name == "TimeTxt")
+            {
+                timeTxt = FindObjectOfType<Canvas>().transform.GetChild(0).GetComponent<Text>();
+            }
+        }
 
     }
 }
