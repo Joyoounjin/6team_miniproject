@@ -21,6 +21,13 @@ public class GameManager : MonoBehaviour
 
     public int cardCount = 0;
     public GameObject endTxt;
+<<<<<<< HEAD
+=======
+    public GameObject Gameover;
+    public GameObject Menu;
+    public GameObject Gallery;
+    public GameObject Nextlevel;
+>>>>>>> Bin
 
     public AudioClip clip;
     public AudioSource audioSource;
@@ -38,7 +45,8 @@ public class GameManager : MonoBehaviour
 
             if (cardCount == 0)
             {
-                endTxt.SetActive(true);
+                Nextlevel.SetActive(true);
+                Gallery.SetActive(true);
                 Time.timeScale = 0.0f;
             }
         }
