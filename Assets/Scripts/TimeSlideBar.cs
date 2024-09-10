@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TimeSlideBar : MonoBehaviour
 {
     public Image gauge;
+    public Image gaugeImage;
     public float totalTime; // 10초로 설정
     private float currentTime;
     bool istime = false;
@@ -14,6 +16,10 @@ public class TimeSlideBar : MonoBehaviour
     void Start()
     {
         currentTime = totalTime;
+        //gaugeImage.rectTransform.sizeDelta = new Vector2(55, 64);
+        //gaugeImage.rectTransform.anchorMin = new Vector2(0.5f, 0.5f); // 앵커를 부모의 가운데로 설정
+        //gaugeImage.rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+        //gaugeImage.rectTransform.pivot = new Vector2(0.5f, 0.5f); // 피벗도 중앙으로
     }
 
     void Update()
@@ -32,12 +38,12 @@ public class TimeSlideBar : MonoBehaviour
         {
             Time.timeScale = 0;
             //AudioManager.Instance.audioSource.Stop();
+            Canvas canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+            canvas.transform.GetChild(1).gameObject.SetActive(true);
             isover = true;
         }
 
 
     }
-
-
 
 }
