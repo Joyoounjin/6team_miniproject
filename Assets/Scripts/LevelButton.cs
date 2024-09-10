@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelButton : MonoBehaviour
 {
-    public int level = 0;
+    public int level;
 
     public void Levelselect ()
     {
