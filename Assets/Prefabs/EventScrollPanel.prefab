@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2828549926764126898}
   - component: {fileID: 4897796790635153560}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: EventScrollPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

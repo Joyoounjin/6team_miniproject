@@ -54,32 +54,34 @@ public class GameManager : MonoBehaviour
         secondCard = null;
     }
 
-    public void checkMatched()
-    {
-        if (firstCard.index == secondCard.index)
-        {
-            firstCard.DestroyCard();
-            secondCard.DestroyCard();
-        }
-        else
-        {
-            firstCard.CloseCard();
-            secondCard.CloseCard();
-        }
+    //public void checkMatched()
+    //{
+    //    if (firstCard.index == secondCard.index)
+    //    {
+    //        firstCard.DestroyCard();
+    //        secondCard.DestroyCard();
+    //    }
+    //    else
+    //    {
+    //        firstCard.CloseCard();
+    //        secondCard.CloseCard();
+    //    }
 
-        firstCard = null;
-        secondCard = null;
-    }
+    //    firstCard = null;
+    //    secondCard = null;
+    //}
 
     private void Awake()
     {
         if (Instance == null)
         {
+            Time.timeScale = 1.0f;
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else
         {
+            Time.timeScale = 1.0f;
             Destroy(this.gameObject);
         }
     }
@@ -92,23 +94,23 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (timeTxt != null)
-        {
-            time += Time.deltaTime;
-            timeTxt.text = time.ToString("N2");
-            if (time >= 30.0f)
-            {
-                FindObjectOfType<Canvas>().transform.GetChild(1).gameObject.SetActive(true);
-                Time.timeScale = 0.0f;
-            }
-        }
-        else
-        {
-            if (FindObjectOfType<Canvas>().transform.GetChild(0).name == "TimeTxt")
-            {
-                timeTxt = FindObjectOfType<Canvas>().transform.GetChild(0).GetComponent<Text>();
-            }
-        }
+        //if (timeTxt != null)
+        //{
+        //    time += Time.deltaTime;
+        //    timeTxt.text = time.ToString("N2");
+        //    if (time >= 5.0f)
+        //    {
+        //        FindObjectOfType<Canvas>().transform.GetChild(1).gameObject.SetActive(true);
+        //        Time.timeScale = 0.0f;
+        //    }
+        //}
+        //else
+        //{
+        //    if (FindObjectOfType<Canvas>().transform.GetChild(0).name == "TimeTxt")
+        //    {
+        //        timeTxt = FindObjectOfType<Canvas>().transform.GetChild(0).GetComponent<Text>();
+        //    }
+        //}
 
     }
 }
