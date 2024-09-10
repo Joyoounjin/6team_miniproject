@@ -32,6 +32,7 @@ public class EventPanel : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("실행");
         // 기본적으로 카테고리 1을 선택한 상태로 시작
         SetCategory(categoryNumber);
 
@@ -106,6 +107,7 @@ public class EventPanel : MonoBehaviour
             if (i < panelImages.Length)
             {
                 panelImage.sprite = panelImages[i];
+                panelImage.GetComponent<RectTransform>().sizeDelta = new Vector2(panelImages[i].bounds.size.x, panelImages[i].bounds.size.y);
                 Debug.Log("이미지넣기");
             }
         }

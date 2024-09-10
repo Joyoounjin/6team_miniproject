@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    // 게임 실행될 때 초기화 (생성) 오브젝트가 없어도 생성
+
     public string Name = "";    //Select Index What User Choose, (B, GD, TH, YJ)
     public int difficulty = 0;  //Select Difficulty (0~2, 0: Easy, 1: Normal, 2: Hard)
 
@@ -20,22 +22,16 @@ public class GameManager : MonoBehaviour
     public int cardCount = 0;
     public GameObject endTxt;
 
-    public AudioClip matchedclip;
-    public AudioClip unmatchedclip;
-    public AudioClip failclip;
-    public AudioClip successclip;
-    public AudioClip timeclip;
 
-
+    public AudioClip clip;
     public AudioSource audioSource;
-    public AudioManager audioManager;
 
 
     public void isMatched()
     {
         if (firstCard.index == secondCard.index)
         {
-            audioSource.PlayOneShot(matchedclip);
+            audioSource.PlayOneShot(clip);
 
             firstCard.DestroyCard();
             secondCard.DestroyCard();
@@ -43,14 +39,13 @@ public class GameManager : MonoBehaviour
 
             if (cardCount == 0)
             {
-                audioSource.PlayOneShot(successclip);
-                endTxt.SetActive(true);
+                FindObjectOfType<Canvas>().transform.GetChild(5).gameObject.SetActive(true);
+                FindObjectOfType<Canvas>().transform.GetChild(4).gameObject.SetActive(true);
                 Time.timeScale = 0.0f;
             }
         }
         else
         {
-            audioSource.PlayOneShot(unmatchedclip);
             firstCard.CloseCard();
             secondCard.CloseCard();
         }
@@ -81,6 +76,11 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
         }
     }
 
@@ -88,20 +88,27 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         audioSource = GetComponent<AudioSource>();
-        AudioManager.Instance.audioSource.clip = AudioManager.Instance.mainclip;
-        AudioManager.Instance.audioSource.Play();
-
     }
 
-    //private void Update()
-    //{
-    //    time += Time.deltaTime;
-    //    timeTxt.text = time.ToString("N2");
-    //    if (time >= 30.0f)
-    //    {
-    //        endTxt.SetActive(true);
-    //        Time.timeScale = 0.0f;
-    //    }
+    private void Update()
+    {
+        if (timeTxt != null)
+        {
+            time += Time.deltaTime;
+            timeTxt.text = time.ToString("N2");
+            if (time >= 30.0f)
+            {
+                FindObjectOfType<Canvas>().transform.GetChild(1).gameObject.SetActive(true);
+                Time.timeScale = 0.0f;
+            }
+        }
+        else
+        {
+            if (FindObjectOfType<Canvas>().transform.GetChild(0).name == "TimeTxt")
+            {
+                timeTxt = FindObjectOfType<Canvas>().transform.GetChild(0).GetComponent<Text>();
+            }
+        }
 
-    //}
+    }
 }
