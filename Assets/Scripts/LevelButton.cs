@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class LevelButton : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public int level = 0;
+
     public void Levelselect ()
     {
+        GameManager.Instance.difficulty = level;
         SceneManager.LoadScene("MainScene");
     }
 
