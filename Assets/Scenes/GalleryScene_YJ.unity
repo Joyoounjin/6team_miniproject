@@ -330,11 +330,11 @@ PrefabInstance:
     - target: {fileID: 7052563991461293510, guid: 24bc178784b6ed04a986e6765f968fb4, type: 3}
       propertyPath: 'category1Images.Array.data[1]'
       value: 
-      objectReference: {fileID: 21300000, guid: b5d2db1b6f432fc48bbf1e5e3db07d99, type: 3}
+      objectReference: {fileID: 5529886436784579953, guid: b5d2db1b6f432fc48bbf1e5e3db07d99, type: 3}
     - target: {fileID: 7052563991461293510, guid: 24bc178784b6ed04a986e6765f968fb4, type: 3}
       propertyPath: 'category1Images.Array.data[2]'
       value: 
-      objectReference: {fileID: 21300000, guid: 6a57f82a154472843ac9d94ee5e73577, type: 3}
+      objectReference: {fileID: 1708946660577973019, guid: 6a57f82a154472843ac9d94ee5e73577, type: 3}
     - target: {fileID: 7052563991461293510, guid: 24bc178784b6ed04a986e6765f968fb4, type: 3}
       propertyPath: 'category1Images.Array.data[3]'
       value: 
@@ -342,7 +342,7 @@ PrefabInstance:
     - target: {fileID: 7052563991461293510, guid: 24bc178784b6ed04a986e6765f968fb4, type: 3}
       propertyPath: 'category1Images.Array.data[4]'
       value: 
-      objectReference: {fileID: 21300000, guid: b81031510641f7e42a65853260e70614, type: 3}
+      objectReference: {fileID: -2497422343235424751, guid: b81031510641f7e42a65853260e70614, type: 3}
     - target: {fileID: 7052563991461293510, guid: 24bc178784b6ed04a986e6765f968fb4, type: 3}
       propertyPath: 'category1Images.Array.data[5]'
       value: 
