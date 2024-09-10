@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    public string Name = "";    //Select Index What User Choose, (B, GD, TH, YJ)
+    public int difficulty = 0;  //Select Difficulty (0~2, 0: Easy, 1: Normal, 2: Hard)
+
     public Text timeTxt;
     float time = 0.0f;
 

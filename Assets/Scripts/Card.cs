@@ -19,7 +19,7 @@ public class Card : MonoBehaviour
     public void Setting(int idx)
     {
         index = idx;
-        frontImage.sprite = Resources.Load<Sprite>($"rtan{index}");
+        frontImage.sprite = Resources.Load<Sprite>($"{GameManager.Instance.Name}/Card{index}");
     }
 
     public void OpenCard()
