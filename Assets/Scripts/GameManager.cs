@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    // 게임 실행될 때 초기화 (생성) 오브젝트가 없어도 생성
+
     public string Name = "";    //Select Index What User Choose, (B, GD, TH, YJ)
     public int difficulty = 0;  //Select Difficulty (0~2, 0: Easy, 1: Normal, 2: Hard)
 
@@ -72,6 +74,11 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -83,12 +90,15 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        time += Time.deltaTime;
-        timeTxt.text = time.ToString("N2");
-        if (time >= 30.0f)
+        if (timeTxt != null)
         {
-            endTxt.SetActive(true);
-            Time.timeScale = 0.0f;
+            time += Time.deltaTime;
+            timeTxt.text = time.ToString("N2");
+            if (time >= 30.0f)
+            {
+                endTxt.SetActive(true);
+                Time.timeScale = 0.0f;
+            }
         }
 
     }
