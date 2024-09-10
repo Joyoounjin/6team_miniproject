@@ -106,6 +106,7 @@ public class EventPanel : MonoBehaviour
             if (i < panelImages.Length)
             {
                 panelImage.sprite = panelImages[i];
+                panelImage.GetComponent<RectTransform>().sizeDelta = new Vector2(panelImages[i].bounds.size.x, panelImages[i].bounds.size.y);
                 Debug.Log("이미지넣기");
             }
         }
