@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
 
     public int cardCount = 0;
     public GameObject endTxt;
+    public GameObject Gameover;
+    public GameObject Menu;
 
     public AudioClip clip;
     public AudioSource audioSource;
@@ -85,6 +87,8 @@ public class GameManager : MonoBehaviour
         if (time >= 30.0f)
         {
             endTxt.SetActive(true);
+            Gameover.SetActive(true);
+            Menu.SetActive(true);
             Time.timeScale = 0.0f;
         }
 
