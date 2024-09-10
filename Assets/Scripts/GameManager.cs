@@ -21,13 +21,12 @@ public class GameManager : MonoBehaviour
 
     public int cardCount = 0;
     public GameObject endTxt;
-<<<<<<< HEAD
-=======
+
     public GameObject Gameover;
     public GameObject Menu;
     public GameObject Gallery;
     public GameObject Nextlevel;
->>>>>>> Bin
+
 
     public AudioClip clip;
     public AudioSource audioSource;
