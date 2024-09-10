@@ -5,6 +5,6 @@ public class GalleryButton : MonoBehaviour
 {
     public void Galleryload()
     {
-        SceneManager.LoadScene("GalleryScene");
+        SceneManager.LoadScene($"GalleryScene_{GameManager.Instance.Name}");
     }
 }

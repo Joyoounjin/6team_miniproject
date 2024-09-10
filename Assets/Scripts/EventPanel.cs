@@ -32,6 +32,7 @@ public class EventPanel : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("실행");
         // 기본적으로 카테고리 1을 선택한 상태로 시작
         SetCategory(categoryNumber);
 
