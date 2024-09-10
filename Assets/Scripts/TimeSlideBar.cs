@@ -23,15 +23,15 @@ public class TimeSlideBar : MonoBehaviour
         gauge.rectTransform.localScale = new Vector3(currentTime / totalTime, 1, 1);
         if(currentTime < totalTime/3 && !istime)
         {
-            AudioManager.Instance.audioSource.Stop();
-            AudioManager.Instance.audioSource.Play();
+            //AudioManager.Instance.audioSource.Stop();
+            //AudioManager.Instance.audioSource.Play();
             istime = true;
         }
 
         if (currentTime == 0 && !isover)
         {
             Time.timeScale = 0;
-            AudioManager.Instance.audioSource.Stop();
+            //AudioManager.Instance.audioSource.Stop();
             isover = true;
         }
 

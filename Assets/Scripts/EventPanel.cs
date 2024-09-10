@@ -34,6 +34,7 @@ public class EventPanel : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1.0f;
+
         SetCategory(categoryNumber);
 
         leftArrow.onClick.AddListener(SlideLeft);

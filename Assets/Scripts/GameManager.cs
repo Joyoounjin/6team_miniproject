@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour
     {
         if (Instance == null)
         {
+            Time.timeScale = 1.0f;
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
