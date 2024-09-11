@@ -43,8 +43,16 @@ public class GameManager : MonoBehaviour
                 AudioManager.Instance.bgmSource.PlayOneShot(AudioManager.Instance.success);
 
 
-                FindObjectOfType<Canvas>().transform.GetChild(5).gameObject.SetActive(true);
-                FindObjectOfType<Canvas>().transform.GetChild(4).gameObject.SetActive(true);
+                if (GameManager.Instance.difficulty != 2)
+                {
+                    FindObjectOfType<Canvas>().transform.GetChild(5).gameObject.SetActive(true);
+                    FindObjectOfType<Canvas>().transform.GetChild(4).gameObject.SetActive(true);
+                }
+                else if (GameManager.Instance.difficulty == 2)
+                {
+                    FindObjectOfType<Canvas>().transform.GetChild(4).gameObject.SetActive(true);
+                }
+
                 Time.timeScale = 0.0f;
             }
         }
