@@ -12,9 +12,7 @@ public class EventPanel : MonoBehaviour
     public int totalPanels = 5;
 
     public Sprite[] category1Images;
-    public Sprite[] category2Images;
-    public Sprite[] category3Images;
-    public Sprite[] category4Images;
+
     public int categoryNumber = 1;
     private Sprite[] panelImages;
 
@@ -35,10 +33,30 @@ public class EventPanel : MonoBehaviour
     {
         Time.timeScale = 1.0f;
 
-        SetCategory(categoryNumber);
-
         leftArrow.onClick.AddListener(SlideLeft);
         rightArrow.onClick.AddListener(SlideRight);
+
+        if (GameManager.Instance.difficulty == 0)
+        {
+            totalPanels = 3;
+            SetPanelCount(totalPanels);
+            Debug.Log("easy");
+        }
+
+        else if (GameManager.Instance.difficulty == 1)
+        {
+            totalPanels = 4;
+            SetPanelCount(totalPanels);
+
+            Debug.Log("nomarl");
+        }
+        else if (GameManager.Instance.difficulty == 2)
+        {
+            totalPanels = 5;
+            SetPanelCount(totalPanels);
+
+            Debug.Log("hard");
+        }
 
         UpdateArrowButtons();
     }
@@ -71,28 +89,6 @@ public class EventPanel : MonoBehaviour
         }
     }
 
-    public void SetCategory(int categoryNumber)
-    {
-        switch (categoryNumber)
-        {
-            case 1:
-                panelImages = category1Images;
-                break;
-            case 2:
-                panelImages = category2Images;
-                break;
-            case 3:
-                panelImages = category3Images;
-                break;
-            case 4:
-                panelImages = category4Images;
-                break;
-        }
-
-        totalPanels = panelImages.Length;
-        SetPanelCount(totalPanels);
-    }
-
     public void SetPanelCount(int count)
     {
         totalPanels = count;
@@ -111,12 +107,15 @@ public class EventPanel : MonoBehaviour
             panelRectTransform.sizeDelta = new Vector2(panelWidth, panelHeight);
             panelRectTransform.localPosition = new Vector3(i * panelWidth, 0, 0);
 
-            Image panelImage = newPanel.transform.Find("Image").GetComponent<Image>();
-
-            if (i < panelImages.Length)
+            Transform imageTransform = newPanel.transform.Find("Image");
+            if (imageTransform != null)
             {
-                panelImage.sprite = panelImages[i];
-                panelImage.GetComponent<RectTransform>().sizeDelta = new Vector2(panelImages[i].bounds.size.x, panelImages[i].bounds.size.y);
+                Image img = imageTransform.GetComponent<Image>();
+                if (img != null)
+                {
+                    img.sprite = category1Images[i];
+                    img.GetComponent<RectTransform>().sizeDelta = new Vector2(category1Images[i].bounds.size.x, category1Images[i].bounds.size.y);
+                }
             }
         }
 
