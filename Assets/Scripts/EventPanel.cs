@@ -114,6 +114,7 @@ public class EventPanel : MonoBehaviour
                 if (img != null)
                 {
                     img.sprite = category1Images[i];
+                    img.GetComponent<RectTransform>().sizeDelta = new Vector2(category1Images[i].bounds.size.x, category1Images[i].bounds.size.y);
                 }
             }
         }
