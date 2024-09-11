@@ -93,7 +93,7 @@ public class EventPanel : MonoBehaviour
             panelRectTransform.sizeDelta = new Vector2(panelWidth, panelHeight);
             panelRectTransform.localPosition = new Vector3(i * panelWidth, 0, 0);
 
-            Image panelImage = newPanel.transform.Find("Image").GetComponent<Image>();
+            Image panelImage = newPanel.transform.GetChild(0).GetComponent<Image>();
 
             if (i < panelImages.Length)
             {
