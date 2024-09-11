@@ -12,6 +12,12 @@ public class Namebutton: MonoBehaviour
 
     public string name;
 
+    public Image image;
+    public Sprite imageB;
+    public Sprite imageYJ;
+    public Sprite imageGD;
+    public Sprite imageTH;
+
     public Text NameTxt;
 
     // Start is called before the first frame update
@@ -22,6 +28,11 @@ public class Namebutton: MonoBehaviour
         Levelgroup.SetActive(true);
 
         GameManager.Instance.Name = name;
+
+        if (name == "B") image.sprite = imageB;
+        else if (name == "YJ") image.sprite = imageYJ;
+        else if (name == "GD") image.sprite = imageGD;
+        else if (name == "TH") image.sprite = imageTH;
     }
 
 }
