@@ -136,7 +136,8 @@ MonoBehaviour:
   category3Images: []
   category4Images: []
   categoryNumber: 1
-  autoScrollDelay: 1
+  autoScrollDelay: 3
+  scrollSpeed: 0.2
 --- !u!1 &351163898409989223
 GameObject:
   m_ObjectHideFlags: 0

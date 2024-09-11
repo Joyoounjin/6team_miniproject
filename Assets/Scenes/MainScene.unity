@@ -268,8 +268,6 @@ MonoBehaviour:
   secondCard: {fileID: 0}
   cardCount: 0
   endTxt: {fileID: 1164611773}
-  clip: {fileID: 8300000, guid: 7cd6f6f4a0157ea4fbdf41e83d3e5a0c, type: 3}
-  audioSource: {fileID: 0}
 --- !u!4 &72335813
 Transform:
   m_ObjectHideFlags: 0
@@ -1307,6 +1305,10 @@ PrefabInstance:
     - target: {fileID: 1313665391209027466, guid: f37b147c8b6f85a41816c3bdb890c940, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148336560974052841, guid: f37b147c8b6f85a41816c3bdb890c940, type: 3}
+      propertyPath: totalTime
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5549964959487959719, guid: f37b147c8b6f85a41816c3bdb890c940, type: 3}
       propertyPath: m_Name

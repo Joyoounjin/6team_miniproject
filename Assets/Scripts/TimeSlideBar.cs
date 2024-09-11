@@ -28,7 +28,7 @@ public class TimeSlideBar : MonoBehaviour
         {
             AudioManager.Instance.bgmSource.clip = AudioManager.Instance.time;
             AudioManager.Instance.bgmSource.Play();
-            AudioManager.Instance.bgmSource.pitch = 1.5f;
+            AudioManager.Instance.bgmSource.pitch = 1.7f;
 
 
             istime = true;

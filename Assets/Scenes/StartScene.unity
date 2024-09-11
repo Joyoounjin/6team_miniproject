@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 10
+  serializedVersion: 9
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -38,12 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 12
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -66,6 +66,9 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
+    m_FinalGather: 0
+    m_FinalGatherFiltering: 1
+    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -415,10 +418,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35257c99e5796174c8dce22b75910f74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  clip: {fileID: 8300000, guid: dd52fefc2670f85498b39edacfa57efa, type: 3}
-  mainclip: {fileID: 8300000, guid: f5a9a7d022a473248b57834ae47e7995, type: 3}
-  timeclip: {fileID: 8300000, guid: c72687c9125a54a469ae2533c180b9ea, type: 3}
+  bgmSource: {fileID: 488827599}
+  sfxSource: {fileID: 488827599}
+  start: {fileID: 8300000, guid: dd52fefc2670f85498b39edacfa57efa, type: 3}
+  main: {fileID: 8300000, guid: f5a9a7d022a473248b57834ae47e7995, type: 3}
+  gallery: {fileID: 8300000, guid: 5741755a58808ef4e8f0fc9064961cad, type: 3}
+  matched: {fileID: 8300000, guid: 7cd6f6f4a0157ea4fbdf41e83d3e5a0c, type: 3}
+  unmatched: {fileID: 8300000, guid: 5fb598aa4b1dab34895383ddcfd0d786, type: 3}
+  time: {fileID: 8300000, guid: c72687c9125a54a469ae2533c180b9ea, type: 3}
+  flip: {fileID: 8300000, guid: 6d39e54514b2d484098a917a6f0860b6, type: 3}
+  success: {fileID: 8300000, guid: 51e5eb39bec4ee6449fce6167778c403, type: 3}
+  fail: {fileID: 8300000, guid: e35dcf4387b08224dacb234da391fd10, type: 3}
+  currentScene:
+    m_Handle: 0
+  newClip: {fileID: 0}
 --- !u!4 &488827598
 Transform:
   m_ObjectHideFlags: 0
@@ -445,8 +458,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -639,7 +651,7 @@ RectTransform:
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1307193570
 Animator:
-  serializedVersion: 7
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -653,7 +665,6 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -805,7 +816,6 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -910,8 +920,6 @@ MonoBehaviour:
   secondCard: {fileID: 0}
   cardCount: 0
   endTxt: {fileID: 0}
-  clip: {fileID: 8300000, guid: 7cd6f6f4a0157ea4fbdf41e83d3e5a0c, type: 3}
-  audioSource: {fileID: 0}
 --- !u!4 &1526031328
 Transform:
   m_ObjectHideFlags: 0
