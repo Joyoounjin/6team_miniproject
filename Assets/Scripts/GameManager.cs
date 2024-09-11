@@ -23,8 +23,8 @@ public class GameManager : MonoBehaviour
     public GameObject endTxt;
 
 
-    public AudioClip clip;
-    public AudioSource audioSource;
+    //public AudioClip clip;
+    //public AudioSource audioSource;
 
 
     public void isMatched()

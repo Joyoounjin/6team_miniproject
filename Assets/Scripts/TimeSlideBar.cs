@@ -16,9 +16,6 @@ public class TimeSlideBar : MonoBehaviour
     void Start()
     {
         AudioManager.Instance.bgmSource.pitch = 1.0f;
-        AudioManager.Instance.bgmSource.clip = AudioManager.Instance.main;
-        AudioManager.Instance.bgmSource.Play();
-
         currentTime = totalTime;
     }
 

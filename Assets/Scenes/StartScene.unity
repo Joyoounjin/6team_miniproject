@@ -423,12 +423,16 @@ MonoBehaviour:
   sfxSource: {fileID: 488827599}
   start: {fileID: 8300000, guid: dd52fefc2670f85498b39edacfa57efa, type: 3}
   main: {fileID: 8300000, guid: f5a9a7d022a473248b57834ae47e7995, type: 3}
+  gallery: {fileID: 8300000, guid: 5741755a58808ef4e8f0fc9064961cad, type: 3}
   matched: {fileID: 8300000, guid: 7cd6f6f4a0157ea4fbdf41e83d3e5a0c, type: 3}
   unmatched: {fileID: 8300000, guid: 5fb598aa4b1dab34895383ddcfd0d786, type: 3}
   time: {fileID: 8300000, guid: c72687c9125a54a469ae2533c180b9ea, type: 3}
   flip: {fileID: 8300000, guid: 6d39e54514b2d484098a917a6f0860b6, type: 3}
   success: {fileID: 8300000, guid: 51e5eb39bec4ee6449fce6167778c403, type: 3}
   fail: {fileID: 8300000, guid: e35dcf4387b08224dacb234da391fd10, type: 3}
+  currentScene:
+    m_Handle: 0
+  newClip: {fileID: 0}
 --- !u!4 &488827598
 Transform:
   m_ObjectHideFlags: 0
@@ -1013,8 +1017,6 @@ MonoBehaviour:
   secondCard: {fileID: 0}
   cardCount: 0
   endTxt: {fileID: 0}
-  clip: {fileID: 8300000, guid: 7cd6f6f4a0157ea4fbdf41e83d3e5a0c, type: 3}
-  audioSource: {fileID: 0}
 --- !u!4 &1526031328
 Transform:
   m_ObjectHideFlags: 0
