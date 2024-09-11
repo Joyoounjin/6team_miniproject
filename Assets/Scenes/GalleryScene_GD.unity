@@ -222,6 +222,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2890393982241077899, guid: 24bc178784b6ed04a986e6765f968fb4, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890393982241077899, guid: 24bc178784b6ed04a986e6765f968fb4, type: 3}
+      propertyPath: m_Color.g
+      value: 0.47843137
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890393982241077899, guid: 24bc178784b6ed04a986e6765f968fb4, type: 3}
+      propertyPath: m_Color.r
+      value: 0.47843137
+      objectReference: {fileID: 0}
     - target: {fileID: 3455739270448439594, guid: 24bc178784b6ed04a986e6765f968fb4, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -365,6 +377,18 @@ PrefabInstance:
         \uAC15\uC544\uC9C0, \uD1A0\uB07C \uAC19\uC774 \uADC0\uC5EC\uC6B4 \uB3D9\uBB3C\uC744
         \uC0AC\uB791\uD569\uB2C8\uB2E4.\r\n\r\n\uB9C8\uB77C\uD1A4 \uCC98\uB7FC  \uAC8C\uC784\uAC1C\uBC1C
         \uC808\uB300 \uD3EC\uAE30\uD558\uC9C0 \uC54A\uC744 \uAC81\uB2C8\uB2E4."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864818418475253770, guid: 24bc178784b6ed04a986e6765f968fb4, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864818418475253770, guid: 24bc178784b6ed04a986e6765f968fb4, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864818418475253770, guid: 24bc178784b6ed04a986e6765f968fb4, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
