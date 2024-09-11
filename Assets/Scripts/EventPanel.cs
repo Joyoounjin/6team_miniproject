@@ -22,7 +22,7 @@ public class EventPanel : MonoBehaviour
     private float panelWidth = 760f;
     private float panelHeight = 430;
 
-    public float autoScrollDelay = 1f;
+    public float autoScrollDelay = 3f;
     public float scrollSpeed = 0.2f;
 
     private bool isScrolling = false;
