@@ -18,6 +18,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip flip;
     public AudioClip success;
     public AudioClip fail;
+    public AudioClip click;
 
     public Scene currentScene;
     public AudioClip newClip = null;

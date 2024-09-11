@@ -672,13 +672,34 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6449354389241754217, guid: 24bc178784b6ed04a986e6765f968fb4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1307295161}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3455739270448439594, guid: 24bc178784b6ed04a986e6765f968fb4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1902931299}
   m_SourcePrefab: {fileID: 100100000, guid: 24bc178784b6ed04a986e6765f968fb4, type: 3}
 --- !u!224 &1902931297 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6449354389241754217, guid: 24bc178784b6ed04a986e6765f968fb4, type: 3}
   m_PrefabInstance: {fileID: 1902931296}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1902931298 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3455739270448439594, guid: 24bc178784b6ed04a986e6765f968fb4, type: 3}
+  m_PrefabInstance: {fileID: 1902931296}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1902931299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902931298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78281a4041399744b8769878f0572ecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound: {fileID: 0}
 --- !u!1 &2098969884
 GameObject:
   m_ObjectHideFlags: 0
@@ -690,6 +711,7 @@ GameObject:
   - component: {fileID: 2098969887}
   - component: {fileID: 2098969886}
   - component: {fileID: 2098969885}
+  - component: {fileID: 2098969888}
   m_Layer: 5
   m_Name: EventScrollPanel
   m_TagString: Untagged
@@ -755,6 +777,19 @@ RectTransform:
   m_AnchoredPosition: {x: 374.33334, y: -150}
   m_SizeDelta: {x: 748.6667, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2098969888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098969884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78281a4041399744b8769878f0572ecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

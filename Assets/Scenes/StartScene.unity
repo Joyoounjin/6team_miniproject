@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 383762152}
   - component: {fileID: 383762151}
   - component: {fileID: 383762150}
+  - component: {fileID: 383762154}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -226,6 +227,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &383762154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383762149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78281a4041399744b8769878f0572ecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound: {fileID: 0}
 --- !u!1 &465675659
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,6 +443,7 @@ MonoBehaviour:
   flip: {fileID: 8300000, guid: 6d39e54514b2d484098a917a6f0860b6, type: 3}
   success: {fileID: 8300000, guid: 51e5eb39bec4ee6449fce6167778c403, type: 3}
   fail: {fileID: 8300000, guid: e35dcf4387b08224dacb234da391fd10, type: 3}
+  click: {fileID: 8300000, guid: 32ec12c815486d1448b0a71909619c6a, type: 3}
   currentScene:
     m_Handle: 0
   newClip: {fileID: 0}

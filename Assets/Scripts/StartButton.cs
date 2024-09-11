@@ -9,5 +9,6 @@ public class StartButton : MonoBehaviour
     public void GameStart()
         {
             SceneManager.LoadScene("NameScene");
+            //AudioManager.Instance.sfxSource.PlayOneShot(AudioManager.Instance.click);
         }
     }
