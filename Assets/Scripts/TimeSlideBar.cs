@@ -15,11 +15,11 @@ public class TimeSlideBar : MonoBehaviour
 
     void Start()
     {
+        AudioManager.Instance.bgmSource.pitch = 1.0f;
+        AudioManager.Instance.bgmSource.clip = AudioManager.Instance.main;
+        AudioManager.Instance.bgmSource.Play();
+
         currentTime = totalTime;
-        //gaugeImage.rectTransform.sizeDelta = new Vector2(55, 64);
-        //gaugeImage.rectTransform.anchorMin = new Vector2(0.5f, 0.5f); // 앵커를 부모의 가운데로 설정
-        //gaugeImage.rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
-        //gaugeImage.rectTransform.pivot = new Vector2(0.5f, 0.5f); // 피벗도 중앙으로
     }
 
     void Update()
@@ -29,14 +29,27 @@ public class TimeSlideBar : MonoBehaviour
         gauge.rectTransform.localScale = new Vector3(currentTime / totalTime, 1, 1);
         if(currentTime < totalTime/3 && !istime)
         {
-            //AudioManager.Instance.audioSource.Stop();
-            //AudioManager.Instance.audioSource.Play();
+            AudioManager.Instance.bgmSource.clip = AudioManager.Instance.time;
+            AudioManager.Instance.bgmSource.Play();
+            AudioManager.Instance.bgmSource.pitch = 1.5f;
+
+
             istime = true;
         }
 
         if (currentTime == 0 && !isover)
         {
             Time.timeScale = 0;
+            Card[] cards = FindObjectsOfType<Card>();
+
+            AudioManager.Instance.bgmSource.Stop();
+            AudioManager.Instance.bgmSource.PlayOneShot(AudioManager.Instance.fail);
+
+            foreach (Card card in cards)
+            {
+                card.IsGameOver = true;
+            }
+
             //AudioManager.Instance.audioSource.Stop();
             Canvas canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
             canvas.transform.GetChild(1).gameObject.SetActive(true);

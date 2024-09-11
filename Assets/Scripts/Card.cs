@@ -16,6 +16,8 @@ public class Card : MonoBehaviour
     public AudioClip clip;
     public AudioSource audioSource;
 
+    public bool IsGameOver = false;
+
     public void Setting(int idx)
     {
         index = idx;
@@ -24,19 +26,22 @@ public class Card : MonoBehaviour
 
     public void OpenCard()
     {
-        audioSource.PlayOneShot(clip);
-        anim.SetBool("isOpen", true);
-        front.SetActive(true);
-        back.SetActive(false);
+        if (!IsGameOver)
+        {
+            audioSource.PlayOneShot(clip);
+            anim.SetBool("isOpen", true);
+            front.SetActive(true);
+            back.SetActive(false);
 
-        if (GameManager.Instance.firstCard == null)
-        {
-            GameManager.Instance.firstCard = this;
-        }
-        else
-        {
-            GameManager.Instance.secondCard = this;
-            GameManager.Instance.isMatched();
+            if (GameManager.Instance.firstCard == null)
+            {
+                GameManager.Instance.firstCard = this;
+            }
+            else
+            {
+                GameManager.Instance.secondCard = this;
+                GameManager.Instance.isMatched();
+            }
         }
     }
 

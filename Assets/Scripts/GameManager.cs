@@ -31,14 +31,18 @@ public class GameManager : MonoBehaviour
     {
         if (firstCard.index == secondCard.index)
         {
-            audioSource.PlayOneShot(clip);
-
+            //audioSource.PlayOneShot(clip);
+            AudioManager.Instance.sfxSource.PlayOneShot(AudioManager.Instance.flip);
             firstCard.DestroyCard();
             secondCard.DestroyCard();
             cardCount -= 2;
 
             if (cardCount == 0)
             {
+                AudioManager.Instance.bgmSource.Stop();
+                AudioManager.Instance.bgmSource.PlayOneShot(AudioManager.Instance.success);
+
+
                 FindObjectOfType<Canvas>().transform.GetChild(5).gameObject.SetActive(true);
                 FindObjectOfType<Canvas>().transform.GetChild(4).gameObject.SetActive(true);
                 Time.timeScale = 0.0f;
@@ -89,7 +93,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1.0f;
-        audioSource = GetComponent<AudioSource>();
+        //audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()

@@ -6,10 +6,16 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
 
-    public AudioSource audioSource;
-    public AudioClip clip;
-    public AudioClip mainclip;
-    public AudioClip timeclip;
+    public AudioSource bgmSource;
+    public AudioSource sfxSource;
+    public AudioClip start;
+    public AudioClip main;
+    public AudioClip matched;
+    public AudioClip unmatched;
+    public AudioClip time;
+    public AudioClip flip;
+    public AudioClip success;
+    public AudioClip fail;
 
     private void Awake()
     {
@@ -26,10 +32,9 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-        
-        audioSource.clip = this.clip;
-        audioSource.Play();
+
+        AudioManager.Instance.bgmSource.pitch = 1.0f;
+
 
     }
 }
