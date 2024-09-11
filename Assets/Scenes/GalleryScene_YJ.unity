@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 10
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -38,12 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 12
-  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -66,9 +66,6 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_FinalGather: 0
-    m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -327,43 +324,43 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7052563991461293510, guid: 24bc178784b6ed04a986e6765f968fb4, type: 3}
-      propertyPath: category1Images.Array.data[0]
+      propertyPath: 'category1Images.Array.data[0]'
       value: 
-      objectReference: {fileID: 21300000, guid: ad5ed99fedb08b745836a4ee5beb948d, type: 3}
+      objectReference: {fileID: -8708346591919083925, guid: ad5ed99fedb08b745836a4ee5beb948d, type: 3}
     - target: {fileID: 7052563991461293510, guid: 24bc178784b6ed04a986e6765f968fb4, type: 3}
-      propertyPath: category1Images.Array.data[1]
+      propertyPath: 'category1Images.Array.data[1]'
       value: 
-      objectReference: {fileID: 21300000, guid: b5d2db1b6f432fc48bbf1e5e3db07d99, type: 3}
+      objectReference: {fileID: 5529886436784579953, guid: b5d2db1b6f432fc48bbf1e5e3db07d99, type: 3}
     - target: {fileID: 7052563991461293510, guid: 24bc178784b6ed04a986e6765f968fb4, type: 3}
-      propertyPath: category1Images.Array.data[2]
+      propertyPath: 'category1Images.Array.data[2]'
       value: 
-      objectReference: {fileID: 21300000, guid: 6a57f82a154472843ac9d94ee5e73577, type: 3}
+      objectReference: {fileID: 1708946660577973019, guid: 6a57f82a154472843ac9d94ee5e73577, type: 3}
     - target: {fileID: 7052563991461293510, guid: 24bc178784b6ed04a986e6765f968fb4, type: 3}
-      propertyPath: category1Images.Array.data[3]
+      propertyPath: 'category1Images.Array.data[3]'
       value: 
-      objectReference: {fileID: 21300000, guid: 64c889f9c3eced34eb80a57fe171879b, type: 3}
+      objectReference: {fileID: -1954099730828481625, guid: 64c889f9c3eced34eb80a57fe171879b, type: 3}
     - target: {fileID: 7052563991461293510, guid: 24bc178784b6ed04a986e6765f968fb4, type: 3}
-      propertyPath: category1Images.Array.data[4]
+      propertyPath: 'category1Images.Array.data[4]'
       value: 
-      objectReference: {fileID: 21300000, guid: b81031510641f7e42a65853260e70614, type: 3}
+      objectReference: {fileID: -2497422343235424751, guid: b81031510641f7e42a65853260e70614, type: 3}
     - target: {fileID: 7052563991461293510, guid: 24bc178784b6ed04a986e6765f968fb4, type: 3}
-      propertyPath: category1Images.Array.data[5]
+      propertyPath: 'category1Images.Array.data[5]'
       value: 
-      objectReference: {fileID: 21300000, guid: ba68ec413cd6f6d42adc8a97de24004a, type: 3}
+      objectReference: {fileID: -4814591283186723625, guid: ba68ec413cd6f6d42adc8a97de24004a, type: 3}
     - target: {fileID: 7052563991461293510, guid: 24bc178784b6ed04a986e6765f968fb4, type: 3}
-      propertyPath: category1Images.Array.data[6]
+      propertyPath: 'category1Images.Array.data[6]'
       value: 
       objectReference: {fileID: 21300000, guid: caa674996be4f7e48b8c5ca58f322f31, type: 3}
     - target: {fileID: 7052563991461293510, guid: 24bc178784b6ed04a986e6765f968fb4, type: 3}
-      propertyPath: category1Images.Array.data[7]
+      propertyPath: 'category1Images.Array.data[7]'
       value: 
       objectReference: {fileID: 21300000, guid: 59801f45156df4444a549394113c6460, type: 3}
     - target: {fileID: 7052563991461293510, guid: 24bc178784b6ed04a986e6765f968fb4, type: 3}
-      propertyPath: category1Images.Array.data[8]
+      propertyPath: 'category1Images.Array.data[8]'
       value: 
       objectReference: {fileID: 21300000, guid: ea42085db0bf6534ab755aa5d547b8cf, type: 3}
     - target: {fileID: 7052563991461293510, guid: 24bc178784b6ed04a986e6765f968fb4, type: 3}
-      propertyPath: category1Images.Array.data[9]
+      propertyPath: 'category1Images.Array.data[9]'
       value: 
       objectReference: {fileID: 21300000, guid: ea42085db0bf6534ab755aa5d547b8cf, type: 3}
     - target: {fileID: 8864818418475253770, guid: 24bc178784b6ed04a986e6765f968fb4, type: 3}
