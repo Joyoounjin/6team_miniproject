@@ -48,7 +48,6 @@ public class AudioManager : MonoBehaviour
     {
         currentScene = SceneManager.GetActiveScene();
 
-        Debug.Log("현재 씬 이름: " + currentScene.name);
 
         // 씬 이름에 따른 처리
         if (currentScene.name == "StartScene" || currentScene.name == "NameScene")

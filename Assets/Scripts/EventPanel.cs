@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,12 +10,13 @@ public class EventPanel : MonoBehaviour
     public Button rightArrow;
     public GameObject panelPrefab;
     public RectTransform content;
-    public int totalPanels = 5;
+    public int totalPanels = 6;
 
     public Sprite[] category1Images;
+    public Sprite lockedImage;
+    public GameObject[] blindPanel;
 
-    public int categoryNumber = 1;
-    private Sprite[] panelImages;
+
 
     private int currentIndex = 0;
     private float panelWidth = 760f;
@@ -36,27 +38,7 @@ public class EventPanel : MonoBehaviour
         leftArrow.onClick.AddListener(SlideLeft);
         rightArrow.onClick.AddListener(SlideRight);
 
-        if (GameManager.Instance.difficulty == 0)
-        {
-            totalPanels = category1Images.Length - 2;
-            SetPanelCount(totalPanels);
-            Debug.Log("easy");
-        }
-
-        else if (GameManager.Instance.difficulty == 1)
-        {
-            totalPanels = category1Images.Length - 1;
-            SetPanelCount(totalPanels);
-
-            Debug.Log("nomarl");
-        }
-        else if (GameManager.Instance.difficulty == 2)
-        {
-            totalPanels = category1Images.Length;
-            SetPanelCount(totalPanels);
-
-            Debug.Log("hard");
-        }
+        SetPanelCount(totalPanels);
 
         UpdateArrowButtons();
     }
@@ -91,36 +73,80 @@ public class EventPanel : MonoBehaviour
 
     public void SetPanelCount(int count)
     {
-        totalPanels = count;
         float contentWidth = count * panelWidth;
         content.sizeDelta = new Vector2(contentWidth, panelHeight);
+
 
         foreach (Transform child in content)
         {
             Destroy(child.gameObject);
         }
 
-        for (int i = 0; i < count; i++)
+        int numPanelsToShow = 4 + GameManager.Instance.difficulty; 
+
+        for (int i = 0; i < category1Images.Length; i++)
         {
             GameObject newPanel = Instantiate(panelPrefab, content);
+
             RectTransform panelRectTransform = newPanel.GetComponent<RectTransform>();
             panelRectTransform.sizeDelta = new Vector2(panelWidth, panelHeight);
             panelRectTransform.localPosition = new Vector3(i * panelWidth, 0, 0);
 
             Transform imageTransform = newPanel.transform.Find("Image");
-            if (imageTransform != null)
+            Image img = imageTransform.GetComponent<Image>();
+
+            if (i < numPanelsToShow)
             {
-                Image img = imageTransform.GetComponent<Image>();
-                if (img != null)
-                {
-                    img.sprite = category1Images[i];
-                    img.GetComponent<RectTransform>().sizeDelta = new Vector2(category1Images[i].bounds.size.x, category1Images[i].bounds.size.y);
-                }
+                //img.gameObject.SetActive(true); // 패널 활성화
+                img.sprite = category1Images[i];
             }
+            else
+            {
+                //img.gameObject.SetActive(true); // 잠금 패널도 활성화 필요 (덮어 씌우기 위해)
+                img.sprite = category1Images[i];
+                img.color = new Color(1, 1, 1, 0.1f); //투명하게
+
+
+                //lock이미지 추가
+                GameObject blindObj = new GameObject("blind");
+                blindObj.transform.SetParent(newPanel.transform, false);
+                Image blindImg= blindObj.AddComponent<Image>();
+                blindImg.rectTransform.sizeDelta = panelRectTransform.sizeDelta;
+                blindImg.color = new Color(0, 0, 0, 0.97f);
+
+                GameObject lockIconObj = new GameObject("LockIcon");
+                lockIconObj.transform.SetParent(newPanel.transform, false); // 패널의 자식으로 추가
+
+                Image lockImg = lockIconObj.AddComponent<Image>(); // Image 컴포넌트 추가
+                lockImg.sprite = lockedImage; // 자물쇠 이미지 설정
+
+                // 크기를 패널과 맞추기
+                //RectTransform rectTransform = lockIconObj.GetComponent<RectTransform>();
+                //rectTransform.sizeDelta = newPanel.GetComponent<RectTransform>().sizeDelta/4;
+                //rectTransform.localPosition = Vector3.zero; // 위치를 중앙으로 설정
+
+                //텍스트 블라인드
+                blindPanel[i-4].SetActive(true);
+            }
+
         }
 
         scrollRect.horizontalNormalizedPosition = 0;
         UpdateArrowButtons();
+    }
+
+    void AddLockIcon(GameObject panel)
+    {
+        GameObject lockIconObj = new GameObject("LockIcon");
+        lockIconObj.transform.SetParent(panel.transform, false); // 패널의 자식으로 추가
+
+        Image lockImage = lockIconObj.AddComponent<Image>(); // Image 컴포넌트 추가
+        lockImage.sprite = lockedImage; // 자물쇠 이미지 설정
+
+        // 크기를 패널과 맞추기
+        RectTransform rectTransform = lockIconObj.GetComponent<RectTransform>();
+        rectTransform.sizeDelta = panel.GetComponent<RectTransform>().sizeDelta;
+        rectTransform.localPosition = Vector3.zero; // 위치를 중앙으로 설정
     }
 
     void SlideLeft()
