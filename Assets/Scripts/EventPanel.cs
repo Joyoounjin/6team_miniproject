@@ -12,9 +12,6 @@ public class EventPanel : MonoBehaviour
     public int totalPanels = 5;
 
     public Sprite[] category1Images;
-    public Sprite[] category2Images;
-    public Sprite[] category3Images;
-    public Sprite[] category4Images;
     public int categoryNumber = 1;
     private Sprite[] panelImages;
 
@@ -35,7 +32,7 @@ public class EventPanel : MonoBehaviour
     {
         Time.timeScale = 1.0f;
 
-        SetCategory(categoryNumber);
+        SetCategory();
 
         leftArrow.onClick.AddListener(SlideLeft);
         rightArrow.onClick.AddListener(SlideRight);
@@ -71,24 +68,9 @@ public class EventPanel : MonoBehaviour
         }
     }
 
-    public void SetCategory(int categoryNumber)
+    public void SetCategory()
     {
-        switch (categoryNumber)
-        {
-            case 1:
-                panelImages = category1Images;
-                break;
-            case 2:
-                panelImages = category2Images;
-                break;
-            case 3:
-                panelImages = category3Images;
-                break;
-            case 4:
-                panelImages = category4Images;
-                break;
-        }
-
+        panelImages = category1Images;
         totalPanels = panelImages.Length;
         SetPanelCount(totalPanels);
     }
