@@ -38,21 +38,21 @@ public class EventPanel : MonoBehaviour
 
         if (GameManager.Instance.difficulty == 0)
         {
-            totalPanels = 3;
+            totalPanels = category1Images.Length - 2;
             SetPanelCount(totalPanels);
             Debug.Log("easy");
         }
 
         else if (GameManager.Instance.difficulty == 1)
         {
-            totalPanels = 4;
+            totalPanels = category1Images.Length - 1;
             SetPanelCount(totalPanels);
 
             Debug.Log("nomarl");
         }
         else if (GameManager.Instance.difficulty == 2)
         {
-            totalPanels = 5;
+            totalPanels = category1Images.Length;
             SetPanelCount(totalPanels);
 
             Debug.Log("hard");
