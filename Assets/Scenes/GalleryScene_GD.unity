@@ -377,6 +377,14 @@ PrefabInstance:
       value: Button Back
       objectReference: {fileID: 0}
     - target: {fileID: 4062267629761761003, guid: 36e4f4e8171d4d84fbd4bd419137ad4b, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4062267629761761003, guid: 36e4f4e8171d4d84fbd4bd419137ad4b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4571828015118065507, guid: 02b62259021361446be6a42f521c34a5, type: 3}
+    - target: {fileID: 4062267629761761003, guid: 36e4f4e8171d4d84fbd4bd419137ad4b, type: 3}
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
