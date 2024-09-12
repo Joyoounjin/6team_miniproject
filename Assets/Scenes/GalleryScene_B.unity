@@ -906,6 +906,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2046554946, guid: a062d1cb80b7b8f48bd6a26586713d00, type: 3}
     - target: {fileID: 7052563991461293510, guid: 24bc178784b6ed04a986e6765f968fb4, type: 3}
+      propertyPath: blindPanel.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7052563991461293510, guid: 24bc178784b6ed04a986e6765f968fb4, type: 3}
+      propertyPath: blindPanel.Array.data[0]
+      value: 
+      objectReference: {fileID: 1424097779}
+    - target: {fileID: 7052563991461293510, guid: 24bc178784b6ed04a986e6765f968fb4, type: 3}
+      propertyPath: blindPanel.Array.data[1]
+      value: 
+      objectReference: {fileID: 1204100342}
+    - target: {fileID: 7052563991461293510, guid: 24bc178784b6ed04a986e6765f968fb4, type: 3}
       propertyPath: category1Images.Array.size
       value: 6
       objectReference: {fileID: 0}
