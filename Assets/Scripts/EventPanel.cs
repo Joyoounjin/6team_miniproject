@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class EventPanel : MonoBehaviour
@@ -81,12 +82,21 @@ public class EventPanel : MonoBehaviour
 
         int numPanelsToShow = 4 + GameManager.Instance.difficulty; 
 
+        if (SceneManager.GetActiveScene().name == "GalleryScene_TH")
+        {
+            numPanelsToShow = 2 + GameManager.Instance.difficulty * 2;
+        }
+
         for (int i = 0; i < category1Images.Length; i++)
         {
             GameObject newPanel = Instantiate(panelPrefab, content);
 
             RectTransform panelRectTransform = newPanel.GetComponent<RectTransform>();
             panelRectTransform.sizeDelta = new Vector2(panelWidth, panelHeight);
+            if (SceneManager.GetActiveScene().name == "GalleryScene_TH")
+            {
+                newPanel.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(category1Images[i].bounds.size.x, category1Images[i].bounds.size.y);
+            }
             panelRectTransform.localPosition = new Vector3(i * panelWidth, 0, 0);
 
             Transform imageTransform = newPanel.transform.Find("Image");
@@ -107,7 +117,17 @@ public class EventPanel : MonoBehaviour
                 Image blindImg= blindObj.AddComponent<Image>();
                 blindImg.rectTransform.sizeDelta = panelRectTransform.sizeDelta;
                 blindImg.color = new Color(0, 0, 0, 0.97f);
-                blindPanel[i-4].SetActive(true);
+
+                if (SceneManager.GetActiveScene().name == "GalleryScene_TH")
+                {
+                    if (i == 3) blindPanel[0].SetActive(true);
+                    if (i == 5) blindPanel[1].SetActive(true);
+                }
+                else
+                {
+                    blindPanel[i-4].SetActive(true);
+                }
+                
 
                 //잠금 이미지
                 GameObject lockIconObj = new GameObject("LockIcon");
