@@ -22,7 +22,6 @@ public class GameManager : MonoBehaviour
     public int cardCount = 0;
     public GameObject endTxt;
 
-
     //public AudioClip clip;
     //public AudioSource audioSource;
 
@@ -102,6 +101,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         //audioSource = GetComponent<AudioSource>();
+
     }
 
     private void Update()

@@ -33,3 +33,4 @@ EditorBuildSettings:
     path: Assets/Scenes/GalleryScene_GD.unity
     guid: 8e351e6c65199c44d9c14024d3f697da
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
