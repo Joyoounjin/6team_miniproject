@@ -16,8 +16,6 @@ public class EventPanel : MonoBehaviour
     public Sprite lockedImage;
     public GameObject[] blindPanel;
 
-
-
     private int currentIndex = 0;
     private float panelWidth = 760f;
     private float panelHeight = 430;
@@ -26,7 +24,7 @@ public class EventPanel : MonoBehaviour
     public float scrollSpeed = 0.2f;
 
     private bool isScrolling = false;
-    private float timeSinceLastScroll = 0f;
+    private float autoScrollTime = 0f;
     private float scrollLerpTime = 0f;   // 스크롤을 부드럽게 이동시키기 위한 변수
     private float targetPosition = 0f;   // 목표 위치
     private float startPosition = 0f;    // 시작 위치
@@ -46,22 +44,21 @@ public class EventPanel : MonoBehaviour
     void Update()
     {
         // 자동 슬라이드 처리
-        timeSinceLastScroll += Time.deltaTime;
+        autoScrollTime += Time.deltaTime;
 
-        if (timeSinceLastScroll >= autoScrollDelay && !isScrolling)
+        if (autoScrollTime >= autoScrollDelay && !isScrolling)
         {
             SlideRight();
-            timeSinceLastScroll = 0f;
+            autoScrollTime = 0f;
         }
 
         // 부드러운 스크롤 처리
         if (isScrolling)
         {
-            scrollLerpTime += Time.deltaTime / scrollSpeed;
-
+            scrollLerpTime += Time.deltaTime / 0.2f;
+            Debug.Log(scrollLerpTime);
             // Lerp를 통해 시작 위치에서 목표 위치로 부드럽게 이동
             scrollRect.horizontalNormalizedPosition = Mathf.Lerp(startPosition, targetPosition, scrollLerpTime);
-
             if (scrollLerpTime >= 1f)
             {
                 scrollRect.horizontalNormalizedPosition = targetPosition;
@@ -97,56 +94,33 @@ public class EventPanel : MonoBehaviour
 
             if (i < numPanelsToShow)
             {
-                //img.gameObject.SetActive(true); // 패널 활성화
                 img.sprite = category1Images[i];
             }
             else
             {
-                //img.gameObject.SetActive(true); // 잠금 패널도 활성화 필요 (덮어 씌우기 위해)
                 img.sprite = category1Images[i];
-                img.color = new Color(1, 1, 1, 0.1f); //투명하게
+                img.color = new Color(1, 1, 1, 0.1f);
 
-
-                //lock이미지 추가
+                //텍스트 블라인드
                 GameObject blindObj = new GameObject("blind");
                 blindObj.transform.SetParent(newPanel.transform, false);
                 Image blindImg= blindObj.AddComponent<Image>();
                 blindImg.rectTransform.sizeDelta = panelRectTransform.sizeDelta;
                 blindImg.color = new Color(0, 0, 0, 0.97f);
-
-                GameObject lockIconObj = new GameObject("LockIcon");
-                lockIconObj.transform.SetParent(newPanel.transform, false); // 패널의 자식으로 추가
-
-                Image lockImg = lockIconObj.AddComponent<Image>(); // Image 컴포넌트 추가
-                lockImg.sprite = lockedImage; // 자물쇠 이미지 설정
-
-                // 크기를 패널과 맞추기
-                //RectTransform rectTransform = lockIconObj.GetComponent<RectTransform>();
-                //rectTransform.sizeDelta = newPanel.GetComponent<RectTransform>().sizeDelta/4;
-                //rectTransform.localPosition = Vector3.zero; // 위치를 중앙으로 설정
-
-                //텍스트 블라인드
                 blindPanel[i-4].SetActive(true);
+
+                //잠금 이미지
+                GameObject lockIconObj = new GameObject("LockIcon");
+                lockIconObj.transform.SetParent(newPanel.transform, false); 
+                Image lockImg = lockIconObj.AddComponent<Image>(); 
+                lockImg.sprite = lockedImage; 
+
             }
 
         }
 
         scrollRect.horizontalNormalizedPosition = 0;
         UpdateArrowButtons();
-    }
-
-    void AddLockIcon(GameObject panel)
-    {
-        GameObject lockIconObj = new GameObject("LockIcon");
-        lockIconObj.transform.SetParent(panel.transform, false); // 패널의 자식으로 추가
-
-        Image lockImage = lockIconObj.AddComponent<Image>(); // Image 컴포넌트 추가
-        lockImage.sprite = lockedImage; // 자물쇠 이미지 설정
-
-        // 크기를 패널과 맞추기
-        RectTransform rectTransform = lockIconObj.GetComponent<RectTransform>();
-        rectTransform.sizeDelta = panel.GetComponent<RectTransform>().sizeDelta;
-        rectTransform.localPosition = Vector3.zero; // 위치를 중앙으로 설정
     }
 
     void SlideLeft()
