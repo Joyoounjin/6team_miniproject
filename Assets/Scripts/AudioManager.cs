@@ -53,19 +53,19 @@ public class AudioManager : MonoBehaviour
         if (currentScene.name == "StartScene" || currentScene.name == "NameScene")
         {
             newClip = start;
-            bgmSource.volume = 0.4f;
+            bgmSource.volume = 0.1f;
         }
         else if (currentScene.name == "MainScene")
         {
             newClip = main;
             bgmSource.clip = main;
-            bgmSource.volume = 0.3f;
+            bgmSource.volume = 0.1f;
             bgmSource.Play();
         }
         else if (currentScene.name == "GalleryScene_YJ" || currentScene.name == "GalleryScene_GD" || currentScene.name == "GalleryScene_TH" || currentScene.name == "GalleryScene_B")
         {
             newClip = gallery;
-            bgmSource.volume = 0.8f;
+            bgmSource.volume = 0.5f;
 
         }
 
